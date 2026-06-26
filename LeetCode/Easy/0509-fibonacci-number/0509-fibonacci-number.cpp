@@ -1,14 +1,18 @@
 class Solution {
 public:
     int fib(int n) {
-        if (n <= 1) {
-        return n;
-    }
-
-    // Recursive case: sum of (n-1)th and (n-2)th Fibonacci numbers
-    int last = fib(n - 1);   // (n-1)th Fibonacci
-    int slast = fib(n - 2);  // (n-2)th Fibonacci
-
-    return last + slast;
+        if (n <= 1) return n;
+        
+        int prev2 = 0; // fib(0)
+        int prev1 = 1; // fib(1)
+        int current = 0;
+        
+        for (int i = 2; i <= n; ++i) {
+            current = prev1 + prev2;
+            prev2 = prev1;
+            prev1 = current;
+        }
+        
+        return current;
     }
 };
