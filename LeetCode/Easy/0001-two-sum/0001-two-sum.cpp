@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int n = nums.size();
-        vector<int> result;
         unordered_map<int,int>mpp;
         
         for(int i{};i<n;++i){
@@ -12,6 +11,6 @@ public:
             }
             mpp[nums[i]]=i;
         }
-        return result;
+        return {};
     }
 };
