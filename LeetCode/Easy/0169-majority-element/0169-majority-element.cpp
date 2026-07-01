@@ -19,6 +19,21 @@ public:
                 count--;
             }
         }
-        return candidate;
+        /* Checking if the stored element
+         is the majority element*/
+        int cnt1 = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] == candidate) {
+                cnt1++;
+            }
+        }
+        
+        //return element if it is a majority element
+        if (cnt1 > (nums.size() / 2)) {
+            return candidate;
+        }
+        
+        //return -1 if no such element found
+        return -1;
     }
 };
